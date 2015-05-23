@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2013.4 (64-bit)
+# SW Build 353583 on Mon Dec  9 17:26:26 MST 2013
+# IP Build 208076 on Mon Dec  2 12:38:17 MST 2013
+# Start of session at: Sat May 23 17:38:07 2015
+# Process ID: 20934
+# Log file: /home/ceca/litianshi/test_deinterleaver/test_deinterleaver.runs/fifo_generator_0_synth_1/fifo_generator_0.rds
+# Journal file: /home/ceca/litianshi/test_deinterleaver/test_deinterleaver.runs/fifo_generator_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source fifo_generator_0.tcl
