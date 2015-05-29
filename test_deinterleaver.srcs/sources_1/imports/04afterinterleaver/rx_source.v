@@ -14,22 +14,24 @@ module rx_source(
       input full,
       output reg rd_en,
       output reg wr_en,
-      output reg [47:0] dout,
+      output [47:0] dout,
 
-      input [LEN:0] total,
-      input now_ready,
+      input [`LEN:0] total,
+      input ready,
       output reg ack
      );
 
 wire temp_empty;
 
-reg [LEN:0] cnt;
+reg [`LEN:0] cnt;
 reg now_ready;
 reg old_ready;
-reg [LEN:0] total_reg;
+reg [`LEN:0] total_reg;
 
 reg [1:0] state = 2'b0;
 reg [1:0] nextstate = 2'b0;
+
+assign dout = din;
 
 assign temp_empty = (rd_en == 1) ? almost_empty:empty;
 
@@ -37,13 +39,20 @@ always@(posedge clk) begin
   now_ready <= ready;
   old_ready <= now_ready;
   total_reg <= total;
-  dout <= din;
+  state <= nextstate;
 end
 
 always@(posedge clk, posedge rst) begin
   if (rst) begin
     cnt <= `LEN'b0;
     ack <= 1'b0;
+    rd_en <= 1'b0;
+    wr_en <= 1'b0;
+    now_ready <= 1'b0;
+    old_ready <= 1'b0;
+    total_reg <= `LEN'b0;
+    state <= 2'b0;
+    nextstate <= 2'b0;
   end
   else begin
     case(state)
@@ -59,15 +68,14 @@ always@(posedge clk, posedge rst) begin
       end
     end
     `COUNT: begin
-      if (cnt) begin
-        if ((!temp_empty) && (!full)) begin
+      if (cnt && (!temp_empty) && (!full)) begin
           cnt <= cnt - 1;
           wr_en <= 1'b1;
           rd_en <= 1'b1;
-        end
-        nextstate <= state;
-      end else begin
-        nextstate <= `IDLE;
+      end
+      else begin
+        wr_en <= 1'b0;
+        rd_en <= 1'b0;
       end
     end
     endcase

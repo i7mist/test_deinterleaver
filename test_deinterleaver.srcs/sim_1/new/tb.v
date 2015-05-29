@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define LEN 31
 
 module tb;
 
@@ -26,8 +27,9 @@ module tb;
     reg [10:0] clkcnt = 0;
     reg clk = 0;
     reg rst = 0;
-    reg ready = 0;
-    reg finish_ack = 0;
+    reg [`LEN:0] total_src = 0;
+    reg src_ready = 0;
+    wire src_ack;
     reg [47:0] din = 0;
     reg wr_en = 0;
     wire [47:0] dout;
@@ -41,26 +43,34 @@ module tb;
     end
     
     initial begin
-        #20 rst = 1;
+        #20 rst = 1'b1;
         #100;
         @(posedge clk);
         #1;
-        #20 rst = 0;
+        #20 rst = 1'b0;
         #20 rate = 4'b1101;
-        #100 din = 48'h6c813498de;
-        #1 wr_en = 1'b1;
+        #20 total_src = `LEN'd2;
+            src_ready = 1'b1;
+        #40 src_ready = 1'b0;
+        #100 din = 48'hde9834816c90;
+         wr_en = 1'b1;
+        #20 din = 48'h03dae9d54004;
         #20 wr_en = 1'b0;
+        
+        
+        
     end
     
     top top(
         .clk(clk),
         .rst(rst),
-        .ready(ready),
-        .finish_ack(finish_ack),
         .wr_en(wr_en),
         .din(din),
         .dout(dout),
-        .rate(rate)
+        .rate(rate),
+        .total_src(total_src),
+        .src_ready(src_ready),
+        .src_ack(src_ack)
     );
 
 endmodule

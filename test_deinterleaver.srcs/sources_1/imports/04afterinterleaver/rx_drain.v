@@ -54,7 +54,7 @@ always@(posedge clk, posedge rst) begin
     ack <= 0;
     finish <= 0;
   end else begin
-    case(nextstate)
+    case(state)
     `IDLE: begin
       if (now_ready) begin
         ack <= 1'b1;

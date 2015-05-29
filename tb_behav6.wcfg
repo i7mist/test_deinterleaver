@@ -10,7 +10,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="41" />
+   <WVObjectSize size="40" />
    <wvobject fp_name="/tb/rate" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">rate[3:0]</obj_property>
       <obj_property name="ObjectShortName">rate[3:0]</obj_property>
@@ -176,9 +176,5 @@
    <wvobject fp_name="/tb/top/rx_source/temp_empty" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">temp_empty</obj_property>
       <obj_property name="ObjectShortName">temp_empty</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/top/rx_deinterleaver/wr_en" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">wr_en</obj_property>
-      <obj_property name="ObjectShortName">wr_en</obj_property>
    </wvobject>
 </wave_config>

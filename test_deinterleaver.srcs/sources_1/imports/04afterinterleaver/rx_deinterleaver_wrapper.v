@@ -59,20 +59,20 @@ end
 always@(posedge clk, posedge rst)
 begin
   if (rst) begin
-    rd_en <= 0;
-    wr_en <= 0;
-    cycle_count <= 0;
+    rd_en <= 1'b0;
+    wr_en <= 1'b0;
+    cycle_count <= 4'b0;
   end else begin
     if (cycle_count < cycle_per_input)
     begin
       if (!temp_empty)
       begin
-        rd_en <= 1;
-        cycle_count <= cycle_count + 1'b1;
+        rd_en <= 1'b1;
+        cycle_count <= cycle_count + 4'b1;
       end
       else
       begin
-        rd_en <= 0;
+        rd_en <= 1'b0;
       end
     end
     else begin
@@ -80,28 +80,29 @@ begin
       begin
         if (!temp_empty)
         begin
-          rd_en <= 1;
-          cycle_count <= 1'b1;
+          rd_en <= 1'b1;
+          cycle_count <= 4'b1;
         end
         else begin
-          rd_en <= 0;
+          rd_en <= 1'b0;
+          cycle_count <= 4'b0;
         end
       end
       else begin
-        rd_en <= 0;
+        rd_en <= 1'b0;
       end
     end
     if (cycle_count < cycle_per_input || cycle_count == cycle_per_output)
     begin
-      wr_en <= 0; 
+      wr_en <= 1'b0; 
     end
     else begin
       if (!full) begin
-        wr_en <= 1;
-        cycle_count <= cycle_count + 1'b1;
+        wr_en <= 1'b1;
+        cycle_count <= cycle_count + 4'b1;
       end
       else begin
-        wr_en <= 0;
+        wr_en <= 1'b0;
       end
     end
   end
@@ -118,7 +119,7 @@ begin
     4'b1011:dout <= {wire_QAM16_dout};
     4'b0001:dout <= {wire_QAM64_dout};
     4'b0011:dout <= {wire_QAM64_dout};
-    default:dout <= 0;
+    default:dout <= 48'b0;
     endcase
 end
 
@@ -133,7 +134,7 @@ begin
   4'b1011:next_cycle_per_output = `cycle_per_output_QAM16;
   4'b0001:next_cycle_per_output = `cycle_per_output_QAM64;
   4'b0011:next_cycle_per_output = `cycle_per_output_QAM64;
-  default:next_cycle_per_output = 0;
+  default:next_cycle_per_output = 4'b0;
   endcase
 end
 
@@ -148,7 +149,7 @@ begin
   4'b1011:next_cycle_per_input = `cycle_per_input_QAM16;
   4'b0001:next_cycle_per_input = `cycle_per_input_QAM64;
   4'b0011:next_cycle_per_input = `cycle_per_input_QAM64;
-  default:next_cycle_per_input = 0;
+  default:next_cycle_per_input = 4'b0;
   endcase
 end
 
