@@ -62,6 +62,18 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/04afterinterleaver/rx_drain.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../04afterinterleaver/rx_drain.v"/>
+        <Attr Name="ImportTime" Val="1432290152"/>
+        <Attr Name="UsedInSynthesis" Val="1"/>
+        <Attr Name="UsedInImplementation" Val="1"/>
+        <Attr Name="UsedInSimulation" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/04afterinterleaver/rx_deinterleaver_wrapper.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../04afterinterleaver/rx_deinterleaver_wrapper.v"/>
@@ -76,18 +88,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/top.v">
       <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-        <Attr Name="UsedInSimulation" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/04afterinterleaver/rx_drain.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../04afterinterleaver/rx_drain.v"/>
-        <Attr Name="ImportTime" Val="1432290152"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
         <Attr Name="UsedInSimulation" Val="1"/>

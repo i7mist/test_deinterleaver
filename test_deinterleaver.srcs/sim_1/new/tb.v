@@ -30,6 +30,11 @@ module tb;
     reg [`LEN:0] total_src = 0;
     reg src_ready = 0;
     wire src_ack;
+    reg [`LEN:0] total_drain = 0;
+    reg drain_ready = 0;
+    wire drain_ack;
+    wire finish;
+    reg finish_ack = 0;
     reg [47:0] din = 0;
     reg wr_en = 0;
     wire [47:0] dout;
@@ -49,16 +54,21 @@ module tb;
         #1;
         #20 rst = 1'b0;
         #20 rate = 4'b1101;
-        #20 total_src = `LEN'd2;
+        #20 total_src = `LEN'd5;
             src_ready = 1'b1;
         #40 src_ready = 1'b0;
+        #20 total_drain = `LEN'd5;
+            drain_ready = 1'b1;
+        #40 drain_ready = 1'b0;
         #100 din = 48'hde9834816c90;
          wr_en = 1'b1;
         #20 din = 48'h03dae9d54004;
+        #20 din = 48'haca93776f8b1;
+        #20 din = 48'h1d4e63fb0f38;
+        #20 din = 48'hc0887dcc6b1d;
         #20 wr_en = 1'b0;
-        
-        
-        
+        #340 finish_ack = 1'b1;
+
     end
     
     top top(
@@ -70,7 +80,13 @@ module tb;
         .rate(rate),
         .total_src(total_src),
         .src_ready(src_ready),
-        .src_ack(src_ack)
+        .src_ack(src_ack),
+        .total_drain(total_drain),
+        .drain_ready(drain_ready),
+        .drain_ack(drain_ack),
+        
+        .finish(finish),
+        .finish_ack(finish_ack)
     );
 
 endmodule

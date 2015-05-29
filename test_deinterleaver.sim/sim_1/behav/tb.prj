@@ -5,6 +5,7 @@ verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/s
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_deinterleaver_QAM16.v"
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_deinterleaver_BPSK.v"
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_source.v"
+verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_drain.v"
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_deinterleaver_wrapper.v"
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/new/top.v"
 verilog work  "/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sim_1/new/tb.v"

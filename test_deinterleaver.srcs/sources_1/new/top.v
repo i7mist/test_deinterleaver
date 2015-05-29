@@ -29,8 +29,14 @@ module top(
     output [47:0] dout,
     input [3:0] rate,
     input [`LEN:0] total_src,
+    input [`LEN:0] total_drain,
     input src_ready,
-    output src_ack
+    input drain_ready,
+    output src_ack,
+    output drain_ack,
+    
+    output finish,
+    input finish_ack
     );
     
     
@@ -58,8 +64,17 @@ module top(
     wire [47:0] din2;
     wire [47:0] dout2;
     
+    wire empty3;
+    wire almost_empty3;
+    wire full3;
+    wire rd_en3;
+    wire wr_en3;
+    wire [47:0] din3;
+    wire [47:0] dout3;    
+    
     assign wr_en0 = wr_en;    
     assign din0 = din;
+    assign dout = dout3;
     
     fifo_generator_0 fifo_0(
         .clk(clk),
@@ -123,7 +138,39 @@ module top(
         .rd_en(rd_en2),
         .wr_en(wr_en2),
         .din(din2),
-        .dout(dout)
+        .dout(dout2)
+    );
+    
+    rx_drain rx_drain(
+          .clk(clk),
+          .rst(rst),
+          .din(dout2),
+          .empty(empty2),
+          .almost_empty(almost_empty2),
+          .full(full3),
+          .rd_en(rd_en2),
+          .wr_en(wr_en3),
+          .dout(din3),
+    
+          .total(total_drain),
+          .ready(drain_ready),
+          .ack(drain_ack),
+          
+          .finish_ack(finish_ack),
+          .finish(finish)
+    );
+        
+    
+    fifo_generator_0 fifo_3(
+        .clk(clk),
+        .rst(rst),
+        .empty(empty3),
+        .almost_empty(almost_empty3),
+        .full(full3),
+        .rd_en(rd_en3),
+        .wr_en(wr_en3),
+        .din(din3),
+        .dout(dout3)
     );
         
 endmodule

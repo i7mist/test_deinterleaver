@@ -47,6 +47,10 @@ t/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/ip/fi
 +Analyzing Verilog file "%s" into library %s165*xsimverific2„
 p/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_source.v2default:default2
 work2default:defaultZ10-165
+é
++Analyzing Verilog file "%s" into library %s165*xsimverific2ƒ
+o/home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_drain.v2default:default2
+work2default:defaultZ10-165
 ù
 +Analyzing Verilog file "%s" into library %s165*xsimverific2“
 /home/ceca/litianshi/test_deinterleaver/test_deinterleaver.srcs/sources_1/imports/04afterinterleaver/rx_deinterleaver_wrapper.v2default:default2
@@ -122,6 +126,10 @@ b
 \
 Compiling module %s405*	simulator2*
 work.rx_deinterleaver
+2default:defaultZ43-3953
+T
+Compiling module %s405*	simulator2"
+work.rx_drain
 2default:defaultZ43-3953
 O
 Compiling module %s405*	simulator2

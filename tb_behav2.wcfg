@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="50" />
+   <wvobject fp_name="/tb/rate" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rate[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rate[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/clkcnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">clkcnt[10:0]</obj_property>
+      <obj_property name="ObjectShortName">clkcnt[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[47:0]</obj_property>
+      <obj_property name="ObjectShortName">din[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_0/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[47:0]</obj_property>
+      <obj_property name="ObjectShortName">din[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_0/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_0/empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_0/almost_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">almost_empty</obj_property>
+      <obj_property name="ObjectShortName">almost_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_0/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/total_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">total_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">total_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/ready" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/temp_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">temp_empty</obj_property>
+      <obj_property name="ObjectShortName">temp_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/full" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[47:0]</obj_property>
+      <obj_property name="ObjectShortName">din[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[47:0]</obj_property>
+      <obj_property name="ObjectShortName">din[47:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_1/empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[47:0]</obj_property>
+      <obj_property name="ObjectShortName">din[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/almost_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">almost_empty</obj_property>
+      <obj_property name="ObjectShortName">almost_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/fifo_2/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_deinterleaver/cycle_count" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cycle_count[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cycle_count[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/almost_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">almost_empty</obj_property>
+      <obj_property name="ObjectShortName">almost_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_source/temp_empty" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">temp_empty</obj_property>
+      <obj_property name="ObjectShortName">temp_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[47:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[47:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/rd_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/wr_en" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/finish" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">finish</obj_property>
+      <obj_property name="ObjectShortName">finish</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/finish_ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">finish_ack</obj_property>
+      <obj_property name="ObjectShortName">finish_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/cnt" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/total_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">total_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">total_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/total" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">total[31:0]</obj_property>
+      <obj_property name="ObjectShortName">total[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/top/rx_drain/nextstate" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">nextstate[1:0]</obj_property>
+      <obj_property name="ObjectShortName">nextstate[1:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -4,6 +4,7 @@
 `define IDLE 2'b0
 `define READY 2'b1
 `define COUNT 2'b10
+`define FINISH 2'b11
 
 module rx_drain(
       input clk,
@@ -14,12 +15,13 @@ module rx_drain(
       input full,
       output reg rd_en,
       output reg wr_en,
-      output reg [47:0] dout,
+      output [47:0] dout,
 
       input [`LEN:0] total,
-      input now_ready,
-      input finish_ack,
+      input ready,
       output reg ack,
+      
+      input finish_ack,
       output reg finish
     );
 
@@ -35,13 +37,13 @@ reg [1:0] state = 2'b0;
 reg [1:0] nextstate = 2'b0;
 
 assign temp_empty = (rd_en == 1) ? almost_empty:empty;
+assign dout = din;
 
 always@(posedge clk) begin
   now_ready <= ready;
   old_ready <= now_ready;
   old_finish_ack <= finish_ack;
   total_reg <= total;
-  dout <= din;
 end
 
 always@(posedge clk) begin
@@ -51,8 +53,16 @@ end
 always@(posedge clk, posedge rst) begin
   if (rst) begin
     cnt <= `LEN'b0; 
-    ack <= 0;
-    finish <= 0;
+    ack <= 1'b0;
+    finish <= 1'b0;
+    rd_en <= 1'b0;
+    wr_en <= 1'b0;
+    now_ready <= 1'b0;
+    old_ready <= 1'b0;
+    total_reg <= `LEN'b0;
+    state <= 2'b0;
+    nextstate <= 2'b0;
+    
   end else begin
     case(state)
     `IDLE: begin
@@ -73,13 +83,21 @@ always@(posedge clk, posedge rst) begin
           wr_en <= 1'b1;
           rd_en <= 1'b1;
         end
-      end else begin
-        if ((!old_finish_ack) && finish_ack) begin
-          finish <= 1'b0;
-        end else begin
-          finish <= 1'b1;
+        else begin
+          wr_en <= 1'b0;
+          rd_en <= 1'b0;
         end
       end
+      else begin
+          finish <= 1'b1;
+          wr_en <= 1'b0;
+          rd_en <= 1'b0;
+      end
+    end
+    `FINISH: begin
+        if ((!old_finish_ack) && finish_ack) begin
+          finish <= 1'b0;
+        end
     end
     endcase
   end
@@ -98,18 +116,20 @@ always@(*) begin
     if ((!now_ready) && old_ready) begin
       nextstate = `COUNT;
     end else begin
-      nextstate = `IDLE;
+      nextstate = state;
     end
   end
   `COUNT: begin
     if (cnt) begin
       nextstate = state;
+    end else 
+      nextstate = `FINISH;
+    end
+  `FINISH: begin
+    if ((!old_finish_ack) && finish_ack) begin
+      nextstate = `IDLE;
     end else begin
-      if ((!old_finish_ack) && finish_ack) begin
-        nextstate = state;
-      end else begin
-        nextstate = `IDLE;
-      end
+      nextstate = state;
     end
   end
   endcase
