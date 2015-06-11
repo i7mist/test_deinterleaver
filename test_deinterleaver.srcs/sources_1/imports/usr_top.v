@@ -121,6 +121,7 @@ module USER_HW(
       ctrl_reg[1] <= 32'b0;
       ctrl_reg[2] <= 32'b0;
       ctrl_reg[3] <= 32'b0;
+      ctrl_reg[4] <= 32'b0;
     end
     else
     begin
